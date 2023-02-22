@@ -1,0 +1,12 @@
+{
+    "CN": "nats.io",
+    "key": {
+        "algo": "rsa",
+        "size": 2048
+    },
+    "names": [
+        {
+            "OU": "nats.io"
+        }
+    ]
+}

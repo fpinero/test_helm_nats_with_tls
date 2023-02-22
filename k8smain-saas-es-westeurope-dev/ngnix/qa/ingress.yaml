@@ -1,0 +1,108 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: nginx-ingress-dev
+  annotations:
+    nginx.ingress.kubernetes.io/auth-url: "https://$host/easyauth/auth"
+    nginx.ingress.kubernetes.io/auth-signin: "https://$host/easyauth/login"
+    nginx.ingress.kubernetes.io/auth-response-headers: "x-injected-userinfo,x-injected-name,x-injected-oid,x-injected-preferred-username,x-injected-sub,x-injected-tid,x-injected-email,x-injected-groups,x-injected-scp,x-injected-roles,x-injected-graph"
+    #cert-manager.io/cluster-issuer: letsencrypt-prod
+    nginx.ingress.kubernetes.io/rewrite-target: /$2
+    cert-manager.io/issuer: letsencrypt-prod
+    cert-manager.io/acme-challenge-type: http01
+    nginx.ingress.kubernetes.io/use-regex: "true"
+
+spec:
+  tls:
+    - hosts:
+      - bizerba-bss-dev.com
+      secretName: bizerba-bss-dev-temporal-tls-dev
+  ingressClassName: nginx
+  rules:
+  - host: bizerba-bss-dev.com
+    http:
+      paths:
+      - path: /
+        pathType: Prefix
+        backend:
+          service:
+            name: platform-management
+            port:
+              number: 80
+      - path: /bizerba-management-platform(/|$)(.*)
+        pathType: Prefix
+        backend:
+          service:
+            name: platform-management
+            port:
+              number: 80
+      - path: /(config.*)
+        pathType: Prefix
+        backend:
+          service:
+            name: platform-management
+            port:
+              number: 80
+      - path: /(assets.*)
+        pathType: Prefix
+        backend:
+          service:
+            name: platform-management
+            port:
+              number: 80
+      - path: /tenant-management(/|$)(.*)
+        pathType: Prefix
+        backend:
+          service:
+            name: tenant-management
+            port:
+              number: 80
+      - path: /(config.*)
+        pathType: Prefix
+        backend:
+          service:
+            name: tenant-management
+            port:
+              number: 80
+      - path: /(assets.*)
+        pathType: Prefix
+        backend:
+          service:
+            name: tenant-management
+            port:
+              number: 80           
+      - path: /tenant-management/tenant-list(/|$)(.*)
+        pathType: Prefix
+        backend:
+          service:
+            name: tenant-management
+            port:
+              number: 80
+      - path: /mastertenant(/|$)(.*)
+        pathType: Prefix
+        backend:
+          service:
+            name: mtm-api
+            port:
+              number: 80
+      - path: /notificationHub(/|$)(.*)
+        pathType: Prefix
+        backend:
+          service:
+            name: saas-platform-notificationservice
+            port:
+              number: 80
+      - path: /organizationalstructure(/|$)(.*)
+        pathType: Prefix
+        backend:
+          service:
+            name: organizationalstructuremanagement-api
+            port:
+              number: 80
+      - path: /poc-poolconnections(/|$)(.*)
+        pathType: Prefix
+        backend:
+          service:
+            name: poc-poolconnections-api
+            port:
+              number: 80

@@ -1,0 +1,146 @@
+{
+  "$schema": "./menu-config-schema.json",
+  "entries": [
+    {
+      "label": "sections.analytics",
+      "icon": "analytics",
+      "entries": [
+        {
+          "label": "sections.dashboard",
+          "route": "dashboard"
+        },
+        {
+          "label": "sections.reporting",
+          "route": "reporting",
+          "right": "SKIP"
+        }
+      ]
+    },
+    {
+      "label": "sections.businessStructure",
+      "icon": "account_tree",
+      "entries": [
+        {
+          "label": "sections.businessUnitTypes",
+          "route": "business-structure/business-unit-types"
+        },
+        {
+          "label": "sections.businessUnits",
+          "route": "business-structure/business-units"
+        },
+        {
+          "label": "sections.serviceDepartments",
+          "route": "business-structure/service-departments"
+        },
+        {
+          "label": "sections.zones",
+          "route": "business-structure/zones"
+        }
+      ]
+    },
+    {
+      "label": "sections.productData",
+      "icon": "category",
+      "entries": [
+        {
+          "label": "sections.barcodes",
+          "route": "product-data/barcodes",
+          "right": "SKIP"
+        },
+        {
+          "label": "sections.scalePlus",
+          "route": "product-data/scale-plus"
+        }
+      ]
+    },
+    {
+      "label": "sections.labelData",
+      "icon": "label",
+      "entries": [
+        {
+          "label": "sections.extraTexts",
+          "route": "label-data/extra-texts"
+        },
+        {
+          "label": "sections.nutrition",
+          "route": "label-data/nutrition"
+        },
+        {
+          "label": "sections.labelFormats",
+          "route": "label-data/label-formats"
+        },
+        {
+          "label": "sections.labelGraphics",
+          "route": "label-data/label-graphics"
+        }
+      ]
+    },
+    {
+      "label": "sections.scaleData",
+      "icon": "scale",
+      "entries": [
+        {
+          "label": "sections.tares",
+          "route": "scale-data/tares"
+        }
+      ]
+    },
+    {
+      "label": "sections.traceabilityData",
+      "icon": "route",
+      "right": "SKIP",
+      "entries": [
+        {
+          "label": "sections.coolCountries",
+          "route": "cool-countries"
+        },
+        {
+          "label": "sections.coolItems",
+          "route": "cool-items"
+        },
+        {
+          "label": "sections.coolProductionSteps",
+          "route": "cool-production-steps"
+        }
+      ]
+    },
+    {
+      "label": "sections.deviceManagement",
+      "icon": "settings_suggest",
+      "entries": [
+        {
+          "label": "sections.devices",
+          "route": "devices-structure/devices"
+        },
+        {
+          "label": "sections.edges",
+          "route": "devices-structure/edges"
+        },
+        {
+          "label": "sections.eventBatches",
+          "route": "event-batches",
+          "right": "SKIP"
+        },
+        {
+          "label": "sections.packages",
+          "route": "packages",
+          "right": "SKIP"
+        }
+      ]
+    },
+    {
+      "label": "sections.securityManagement",
+      "icon": "security",
+      "entries": [
+        {
+          "label": "sections.roles",
+          "route": "security-management/roles"
+        },
+        {
+          "label": "sections.users",
+          "route": "security-management/users"
+        }
+      ]
+    }
+  ]
+}

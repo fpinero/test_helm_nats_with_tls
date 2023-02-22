@@ -1,0 +1,16 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: oathkeeper-proxy
+  labels:
+    app.kubernetes.io/name: oathkeeper
+    app.kubernetes.io/version: "v0.39"
+spec:
+  type: ClusterIP
+  ports:
+    - port: 4455
+      targetPort: oath-proxy
+      protocol: TCP
+      name: http
+  selector:
+    app.kubernetes.io/name: oathkeeper

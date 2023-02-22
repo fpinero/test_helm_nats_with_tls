@@ -1,0 +1,30 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: oathkeeper
+  annotations:
+    nginx.ingress.kubernetes.io/rewrite-target: /$1
+    cert-manager.io/issuer: letsencrypt-prod
+    cert-manager.io/acme-challenge-type: http01
+    nginx.ingress.kubernetes.io/enable-cors: "true"
+    nginx.ingress.kubernetes.io/cors-allow-credentials: "true"
+    nginx.ingress.kubernetes.io/cors-allow-headers: "Content-Type, X-Requested-With, x-signalr-user-agent, insecure, rejectunauthorized, requestcert"
+    nginx.ingress.kubernetes.io/cors-allow-methods: PUT, GET, POST, OPTIONS, DELETE
+    nginx.ingress.kubernetes.io/cors-allow-origin: "https://bizerba-bss-dev.com"
+spec:
+  tls:
+    - hosts:
+      - bizerba-bss-devops.com
+      secretName: bizerba-bss-devops-tls
+  ingressClassName: nginx
+  rules:
+  - host: bizerba-bss-devops.com
+    http:
+      paths:
+      - path: /(.*)
+        pathType: Prefix
+        backend:
+          service:
+            name: oathkeeper-proxy
+            port:
+              number: 4455

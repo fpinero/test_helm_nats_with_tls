@@ -1,0 +1,16 @@
+apiVersion: dapr.io/v1alpha1
+kind: Component
+metadata:
+  name: azurekeyvault
+spec:
+  type: secretstores.azure.keyvault
+  version: v1
+  metadata:
+  - name: vaultName
+    value: "kv1-saas-westeurope-qa"
+  - name: azureTenantId
+    value: "2898792b-c644-4207-bb78-a08f555def6c"
+  - name: azureClientId
+    value: "219813d6-ff94-4781-a9d9-ab9e53747da9"
+auth:
+  secretStore: kubernetes

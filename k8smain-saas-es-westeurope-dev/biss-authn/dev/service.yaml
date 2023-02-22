@@ -1,0 +1,15 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: biss-authn
+  labels:
+    app.kubernetes.io/name: biss-authn
+spec:
+  type: ClusterIP
+  ports:
+    - port: 8090
+      targetPort: biss-authn
+      protocol: TCP
+      name: http
+  selector:
+    app.kubernetes.io/name: biss-authn

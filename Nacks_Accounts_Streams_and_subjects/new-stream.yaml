@@ -1,0 +1,10 @@
+apiVersion: jetstream.nats.io/v1beta2
+kind: Stream
+metadata:
+  name: test-stream
+spec:
+  name: test-stream
+  subjects: ["foo", "foo.>"]
+  storage: file
+  replicas: 1
+#  account: a # <-- Create stream using account A information

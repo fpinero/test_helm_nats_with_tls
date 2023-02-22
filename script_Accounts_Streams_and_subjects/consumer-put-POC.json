@@ -1,0 +1,14 @@
+{
+  "ack_policy": "explicit",
+  "ack_wait": 30000000000,
+  "deliver_policy": "all",
+  "deliver_subject": "de_000000000002-organizational-structure-management_business-units_put_1-0_POC",
+  "deliver_group": "de_000000000002-organizational-structure-management_business-units_put_1-0_POC",
+  "durable_name": "de_000000000002-organizational-structure-management_business-units_put_1-0_POC",
+  "name": "de_000000000002-organizational-structure-management_business-units_put_1-0_POC",
+  "filter_subject": "de_000000000002-organizational-structure-management.business-units.put.1-0",
+  "max_ack_pending": 1000,
+  "max_deliver": -1,
+  "replay_policy": "instant",
+  "num_replicas": 0
+}

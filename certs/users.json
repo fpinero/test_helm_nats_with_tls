@@ -1,0 +1,15 @@
+{
+  "users": [
+    { "username": "CN=nats.io,OU=ACME" },
+    { "username": "CN=nats.io,OU=CNCF",
+      "permissions": {
+    "publish": ["hello.*"],
+    "subscribe": ["hello.world"]
+      }
+    }
+  ],
+  "default_permissions": {
+    "publish": ["SANDBOX.*"],
+    "subscribe": ["PUBLIC.>"]
+  }
+}

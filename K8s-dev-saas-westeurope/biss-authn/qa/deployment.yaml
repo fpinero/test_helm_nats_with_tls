@@ -1,0 +1,48 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: biss-authn
+  labels:
+    app.kubernetes.io/name: biss-authn
+  annotations:
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app.kubernetes.io/name: biss-authn
+  template:
+    metadata:
+      labels:
+        app.kubernetes.io/name: biss-authn
+      annotations:
+    spec:
+      volumes:
+        - name: biss-authn-config-volume
+          configMap:
+            name: biss-authn-config
+      containers:
+        - name: biss-authn
+          image: "acrsaaseswesteuropedev.azurecr.io/poc-authn-service:latest"
+          imagePullPolicy: Always
+          ports:
+            - name: biss-authn
+              containerPort: 8090
+              protocol: TCP
+          volumeMounts:
+            - name: biss-authn-config-volume
+              mountPath: /app/config
+          # livenessProbe:
+          #   httpGet:
+          #     path: /health-check
+          #     port: bauthn
+          #   failureThreshold: 5
+          #   initialDelaySeconds: 30
+          #   periodSeconds: 10
+          # readinessProbe:
+          #   httpGet:
+          #     path: /health-check
+          #     port: bauthn
+          #   failureThreshold: 5
+          #   initialDelaySeconds: 30
+          #   periodSeconds: 10
+        ##TODO: pending to add production ready configurations

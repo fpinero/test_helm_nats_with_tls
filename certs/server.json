@@ -1,0 +1,30 @@
+{
+    "CN": "nats.io",
+    "hosts": [
+        "localhost",
+        "*.nats-cluster.default.svc",
+        "*.nats-cluster-mgmt.default.svc",
+        "nats-cluster",
+        "nats-cluster-mgmt",
+        "nats-cluster.default.svc",
+        "nats-cluster-mgmt.default.svc",
+        "nats-cluster.default.svc.cluster.local",
+        "nats-cluster-mgmt.default.svc.cluster.local",
+        "*.nats-cluster.default.svc.cluster.local",
+        "*.nats-cluster-mgmt.default.svc.cluster.local",
+        "nats-cluster.default.svc.cluster.local",
+        "*.nats.nats.svc.cluster.local",
+        "20.101.205.253",
+        "nats",
+        "nats.nats.svc.cluster.local"
+    ],
+    "key": {
+        "algo": "rsa",
+        "size": 2048
+    },
+    "names": [
+        {
+            "OU": "Operator"
+        }
+    ]
+}

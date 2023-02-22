@@ -1,0 +1,17 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: psql-tunnel
+  labels:
+    name: psql-tunnel
+spec:
+  containers:
+  - name: psql-tunnel
+    image: alpine/socat
+    command: ["socat", "-dd", "tcp4-listen:5432,fork,reuseaddr", "tcp4:flexpostgresql-saas-bz-westeurope-dev.postgres.database.azure.com:5432"]
+    resources:
+      limits:
+        memory: "64Mi"
+        cpu: "50m"
+    ports:
+      - containerPort: 5432

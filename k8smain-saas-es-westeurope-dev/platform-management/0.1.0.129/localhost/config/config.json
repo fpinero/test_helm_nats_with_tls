@@ -1,0 +1,14 @@
+{
+    "$schema": "./config-schema.json",
+    "serverURL": "https://bizerba-bss-dev.com/",
+    "defaultLanguage": "en-US",
+    "availableLanguages": ["de", "en", "en-US"],
+    "restApiVersion": "1",
+    "wsURL": "https://bizerba-bss-dev.com/notificationHub/notificationHub",
+    "logOutURL": "https://bizerba-bss-dev.com/logout",
+    "versioning": [
+        { "name": "platform-management", "versionNumber": "0.1.0.129" },
+        { "name": "mtm-api", "versionNumber": "RC-0.3.0.22" },
+        { "name": "notificationservice", "versionNumber": "0.0.2" }
+    ]
+}

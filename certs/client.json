@@ -1,0 +1,13 @@
+{
+    "CN": "nats.io",
+    "hosts": [""],
+    "key": {
+        "algo": "rsa",
+        "size": 2048
+    },
+    "names": [
+        {
+            "OU": "CNCF"
+        }
+    ]
+}

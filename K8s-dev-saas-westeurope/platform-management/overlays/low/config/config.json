@@ -1,0 +1,27 @@
+{
+  "$schema": "./config-schema.json",
+  "serverURL": "https://bizerba-bss-low.com/",
+  "defaultLanguage": "en-US",
+  "availableLanguages": [
+    "de",
+    "en",
+    "en-US"
+  ],
+  "restApiVersion": "1",
+  "wsURL": "https://bizerba-bss-low.com/notificationHub/notificationHub",
+  "logOutURL": "https://bizerba-bss-low.com/logout",
+  "versioning": [
+    {
+      "name": "biss-saas-fe",
+      "versionNumber": "20220527.1"
+    },
+    {
+      "name": "mtm-api",
+      "versionNumber": "0.2.0.7"
+    },
+    {
+      "name": "notificationservice",
+      "versionNumber": "0.0.2"
+    }
+  ]
+}

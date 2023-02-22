@@ -1,0 +1,14 @@
+apiVersion: jetstream.nats.io/v1beta2
+kind: Account
+metadata:
+  name: account-fpe
+spec:
+  name: account-fpe
+  servers:
+  - nats://nats.nats.svc.cluster.local:4222
+#  tls:
+#    secret:
+#      name: nack-a-tls
+#    ca: "ca.crt"
+#    cert: "tls.crt"
+#    key: "tls.key"
